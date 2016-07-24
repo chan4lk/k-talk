@@ -27,8 +27,8 @@ namespace PetApp {
         getAllPets(): ng.IPromise<Array<Pet>> {
             let defer = this.$q.defer();
             let pets = Array<Pet>();
-
-            this.$http.get('/angualrdemo/_api/lists/getbytitle(\'Pets\')/items?$select=Title,Age,IsAvailable',
+            let root = _spPageContextInfo.webAbsoluteUrl;
+            this.$http.get(`${root}/_api/lists/getbytitle(\'Pets\')/items?$select=Title,Age,IsAvailable`,
                 { headers: { 'Accept': 'application/json;odata=nometadata;' } })
                 .then((response: IPetResponse) => {
                     pets = response.data.value as Array<Pet>;
