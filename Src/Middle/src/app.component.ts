@@ -4,8 +4,10 @@ namespace PetApp {
      */
     class PetController implements ng.IComponentController {
         pet: Pet;
+
         constructor(
-            private $log: ng.ILogService) {
+            private $log: ng.ILogService,
+            private dataService: IDataService) {
 
             this.$log.info('Welcome');
         }
@@ -21,8 +23,8 @@ namespace PetApp {
          *Create a new instance of PetComponent.
          */
         constructor() {
-            this.templateUrl = Constants.PetHTML;
-            this.controller = ['$log', PetController];
+            this.templateUrl = 'src/pet.html';
+            this.controller = ['$log', 'spDataSvc', PetController];
             this.controllerAs = 'vm';
             this.bindings = {
                 pet: '<'
