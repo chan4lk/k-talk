@@ -1,0 +1,19 @@
+{
+"For Loop": {
+        "prefix": "form",
+        "body": [
+            "for (var ${index} = 0; ${index} < ${array}.length; ${index}++) {",
+            "\tvar ${element} = ${array}[${index}];",
+            "\t$0",
+            "}"
+        ],
+        "description": "For Loop"
+    },
+"SpData Service":{
+        "prefix":"spd",
+        "body":[
+            "import { IDataService } from './IDataService';\nimport { Pet } from './Pet';\n    /**\n     * SPDataService\n     */\n    class SPDataService implements IDataService {\n        constructor() {\n\n        }\n        /**\n         * Get All Pets\n         * @return All Pets\n         */\n        getAllPets(): Array<Pet> {\n            return [\n                {\n                    name: 'Blob ',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy2',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n            ];\n\n        }\n    }\n\n    angular\n        .module('petApp')\n        .service('spDataSvc', SPDataService);"],
+        "description":"spd"
+
+    }
+}

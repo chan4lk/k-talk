@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "es6",
+        "target": "es5",
+        "noImplicitAny": true,
+        "sourceMap": true,        
+        "outFile": "output.js"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

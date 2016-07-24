@@ -1,0 +1,25 @@
+{
+  "name": "started",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",  
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^6.0.1",
+    "gulp-typescript": "^2.13.6",
+    "retyped-microsoft-ajax-tsd-ambient": "0.0.0-0",
+    "tslint": "^3.13.0",
+    "typescript": "^1.8.10"
+  }
+}
