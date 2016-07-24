@@ -1,5 +1,5 @@
 namespace PetApp {
     export interface IDataService {
-        getAllPets(): Array<Pet>;
+        getAllPets(): ng.IPromise<Array<Pet>>;
     }
 }

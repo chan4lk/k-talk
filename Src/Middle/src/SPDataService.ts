@@ -1,49 +1,41 @@
 namespace PetApp {
+
+    interface IPetResponse {
+        data: {
+            value: Array<Pet>;
+        };
+    }
+
     /**
      * SPDataService
      */
     class SPDataService implements IDataService {
-        constructor() {
+
+        static $inject = ['$http', '$q'];
+
+        /**
+         * Creates a new instance of <see ref="SPDataService">
+         */
+        constructor(private $http: ng.IHttpService, private $q: ng.IQService) {
 
         }
+
         /**
          * Get All Pets
          * @return All Pets
          */
-        getAllPets(): Array<Pet> {
-            return [
-                {
-                    name: 'Blob ',
-                    picture: 'images/image.jpg',
-                    age: 5,
-                    isAvailable: true
-                },
-                {
-                    name: 'Puppy2',
-                    picture: 'images/image.jpg',
-                    age: 5,
-                    isAvailable: true
-                },
-                {
-                    name: 'Puppy',
-                    picture: 'images/image.jpg',
-                    age: 5,
-                    isAvailable: true
-                },
-                {
-                    name: 'Puppy',
-                    picture: 'images/image.jpg',
-                    age: 5,
-                    isAvailable: true
-                },
-                {
-                    name: 'Puppy',
-                    picture: 'images/image.jpg',
-                    age: 5,
-                    isAvailable: true
-                },
-            ];
+        getAllPets(): ng.IPromise<Array<Pet>> {
+            let defer = this.$q.defer();
+            let pets = Array<Pet>();
+            let root = _spPageContextInfo.webAbsoluteUrl;
+            this.$http.get(`${root}/_api/lists/getbytitle(\'Pets\')/items?$select=Title,Age,IsAvailable`,
+                { headers: { 'Accept': 'application/json;odata=nometadata;' } })
+                .then((response: IPetResponse) => {
+                    pets = response.data.value as Array<Pet>;
+                    defer.resolve(pets);
+                });
 
+            return defer.promise;
         }
     }
 

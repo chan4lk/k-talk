@@ -5,8 +5,10 @@ namespace PetApp {
     class ContainerController {
         pets: Array<Pet>;
         constructor(private $log: ng.ILogService,
-            private spDataService: IDataService) {
-            this.pets = this.spDataService.getAllPets();
+            private dataService: IDataService) {
+            this.dataService.getAllPets().then((pets) => {
+               this.pets = pets;
+            });
         }
     }
 
@@ -20,7 +22,7 @@ namespace PetApp {
 
         constructor() {
             this.controller = ['$log', 'spDataSvc', ContainerController];
-            this.templateUrl = 'src/container.html';
+            this.templateUrl = Constants.ContainerHTML;
             this.controllerAs = 'parent';
         }
     }
