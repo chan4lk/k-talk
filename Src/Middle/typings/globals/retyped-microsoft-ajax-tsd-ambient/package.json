@@ -1,0 +1,45 @@
+{
+  "name": "retyped-microsoft-ajax-tsd-ambient",
+  "description": "TypeScript typings for microsoft-ajax",
+  "version": "0.0.0-0",
+  "licence": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retyped/microsoft-ajax-tsd-ambient.git"
+  },
+  "typescript": {
+    "definition": "microsoft.ajax.d.ts"
+  },
+  "keywords": [
+    "retyped",
+    "tsd",
+    "tsd-ambient"
+  ],
+  "gitHead": "1f8ba93450254b86528d822f3003068881c7b715",
+  "bugs": {
+    "url": "https://github.com/retyped/microsoft-ajax-tsd-ambient/issues"
+  },
+  "homepage": "https://github.com/retyped/microsoft-ajax-tsd-ambient#readme",
+  "_id": "retyped-microsoft-ajax-tsd-ambient@0.0.0-0",
+  "scripts": {},
+  "_shasum": "a81c58a7f3d9e92273ddbd476fa01783ffeb4f93",
+  "_from": "retyped-microsoft-ajax-tsd-ambient@latest",
+  "_npmVersion": "3.3.12",
+  "_nodeVersion": "5.1.0",
+  "_npmUser": {
+    "name": "retyped",
+    "email": "ohmyglobthisissilly@gmail.com"
+  },
+  "dist": {
+    "shasum": "a81c58a7f3d9e92273ddbd476fa01783ffeb4f93",
+    "tarball": "https://registry.npmjs.org/retyped-microsoft-ajax-tsd-ambient/-/retyped-microsoft-ajax-tsd-ambient-0.0.0-0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "retyped",
+      "email": "ohmyglobthisissilly@gmail.com"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/retyped-microsoft-ajax-tsd-ambient/-/retyped-microsoft-ajax-tsd-ambient-0.0.0-0.tgz"
+}
