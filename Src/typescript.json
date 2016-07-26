@@ -1,0 +1,31 @@
+{
+"SpData Service":{
+        "prefix":"spd",
+        "body":[
+            "import { IDataService } from './IDataService';\nimport { Pet } from './Pet';\n    /**\n     * SPDataService\n     */\n    class SPDataService implements IDataService {\n        constructor() {\n\n        }\n        /**\n         * Get All Pets\n         * @return All Pets\n         */\n        getAllPets(): Array<Pet> {\n            return [\n                {\n                    name: 'Blob ',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy2',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n            ];\n\n        }\n    }\n\n    angular\n        .module('petApp')\n        .service('spDataSvc', SPDataService);"],
+        "description":"spd"
+
+    },
+
+    "Lesson 1":{
+        "prefix": "l1",
+        "body": "var version: number = 2;\nvar framework: string = \"Angular\";\nvar myFramework = framework + version;\nvar release = { version: version, name: framework };\nvar err1 = release.id;\nvar err2 = version + release;",
+        "description": "Lesson 1"
+
+    },
+    "Lesson 2":{
+        "prefix": "l2",
+        "body": "interface IRunnable {\n    run(): void;\n}\n\nclass Thread implements IRunnable {\n    run() {\n        console.log('thread started');\n    }\n}",
+        "description": "Lesson 2"
+    },
+    "Lesson 3":{
+        "prefix": "l3",
+        "body": "class KTalk {\n    speaker: string;\n    time: Date;\n    topic: string;\n\n    constructor(\n        speaker: string,\n        time: Date,\n        topic: string) {\n\n        this.speaker = speaker;\n        this.time = time;\n        this.topic = topic;\n    }\n\n    getDescription() {\n        return this.topic + \"will be presented by\" +\n            this.speaker + \" on \" + this.time.getHours();\n    }\n}\n\nvar talk = new KTalk(\n    'Chandima Ranaweera',\n    new Date(),\n    'Getting Started with Typescript');",
+        "description": "Lesson 3"
+    },
+    "Lesson 4":{
+        "prefix": "l4",
+        "body": "class Presenter {\n    topics: string[];\n    constructor(topics: string[]) {\n        this.topics = topics;\n    }\n    present() {  \n       \n            setTimeout(()=>{\n                alert(this.topics[0]);\n            }, 1000);\n           \n    }\n}\nvar topics = ['Getting Started with Typescript', 'Getting Started with Angular 2'];\nvar presenter = new Presenter(topics);\npresenter.present();",
+        "description": "Lesson 4"
+    }
+}
