@@ -1,8 +1,8 @@
 namespace PetApp {
     export interface Pet {
-        Title: string;
-        Picture: string;
-        Age: number;
-        IsAvailable: boolean;
+        name: string;
+        picture: string;
+        age: number;
+        isAvailable: boolean;
     }
 }
