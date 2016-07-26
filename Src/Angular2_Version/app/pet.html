@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-6">Name</div>
+        <div class="col-md-6">{{pet.name}}</div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-6">Picture</div>
+        <div class="col-md-6">
+            <img alt="{{pet.name}}" [src]="pet.picture" style="width:100px;">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-6">Age</div>
+        <div class="col-md-6">{{pet.age}}</div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-6">Is Avalable</div>
+        <div class="col-md-6">
+            <input type="checkbox" [(ngModel)]="pet.isAvailable">
+        </div>
+    </div>
+</div>
