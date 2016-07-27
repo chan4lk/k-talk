@@ -27,5 +27,50 @@
         "prefix": "l4",
         "body": "class Presenter {\n    topics: string[];\n    constructor(topics: string[]) {\n        this.topics = topics;\n    }\n    present() {  \n       \n            setTimeout(()=>{\n                alert(this.topics[0]);\n            }, 1000);\n           \n    }\n}\nvar topics = ['Getting Started with Typescript', 'Getting Started with Angular 2'];\nvar presenter = new Presenter(topics);\npresenter.present();",
         "description": "Lesson 4"
+    },
+    "Lesson 6":{
+        "prefix": "pet1",
+        "body": "(()=>{\n    angular.module('petApp', []);\n})();",
+        "description": "Module"
+    },
+    "Lesson 7":{
+        "prefix": "pet2",
+        "body": "module PetApp{\n    /**\n     * PetController\n     */\n    class PetController implements ng.IComponentController{\n        pet:Pet;\n       \n        constructor(\n            private $log:ng.ILogService,\n            private dataService:IDataService) {\n                \n            this.$log.info('Welcome');            \n        }\n    }\n\n    class PetComponent implements ng.IComponentOptions{\n        public templateUrl:string;\n        public controller:any;\n        public controllerAs:string;\n        public bindings:any;\n\n        /** \n         *Create a new instance of PetComponent.\n         */\n        constructor() {\n            this.templateUrl = 'src/pet.html';\n            this.controller = ['$log', 'spDataSvc', PetController];\n            this.controllerAs = 'vm';\n            this.bindings = {\n                pet:'<'\n            };\n        }\n\n    }\n\n    angular\n    .module('petApp')\n    .component('myPet', new PetComponent());\n}",
+        "description": "Pet Component"
+    },
+    "Lesson 8":{
+        "prefix": "pet3",
+        "body": "module PetApp{\n    /**\n     * ContainerController\n     */\n    class ContainerController {\n        pets:Array<Pet>;\n        constructor(private $log:ng.ILogService,\n                    private spDataService:IDataService) {\n           this.pets = this.spDataService.getAllPets();\n        }\n    }\n\n    /**\n     * ContainerComponent\n     */\n    class ContainerComponent {\n        public templateUrl:string;\n        public controller: any;\n        public controllerAs: string;\n\n        constructor() {\n            this.controller = ['$log', 'spDataSvc', ContainerController];\n            this.templateUrl = 'src/container.html';\n            this.controllerAs = 'parent';\n        }\n    }\n\n    angular.module('petApp')\n            .component('petApp', new ContainerComponent());\n}",
+        "description": "Container component"
+    },
+    "Lesson 9":{
+        "prefix": "pet4",
+        "body": "<div class=\"container\">\n    <h1>My Pet Shop</h1>\n    <div ng-repeat=\"pet in parent.pets\">\n        <my-pet pet='pet'></my-pet>\n        <hr>\n    </div>\n</div>",
+        "description": "Container HTML"
+    },
+    "Lesson 10":{
+        "prefix": "pet5",
+        "body": "module PetApp{\n    export interface IDataService{\n        getAllPets():Array<Pet>;\n    }\n}",
+        "description": "IDataservice"
+    },
+    "Lesson 11":{
+        "prefix": "pet6",
+        "body": "<div class=\"row\">\n    <div class=\"col-md-12\">\n        <div class=\"col-md-6\">Name</div>\n        <div class=\"col-md-6\">{{vm.pet.name}}</div>\n    </div>\n    <div class=\"col-md-12\">\n        <div class=\"col-md-6\">Picture</div>\n        <div class=\"col-md-6\">\n            <img alt=\"{{vm.pet.name}}\" ng-src=\"{{vm.pet.picture}}\" style=\"width:100px;\">\n        </div>\n    </div>\n    <div class=\"col-md-12\">\n        <div class=\"col-md-6\">Age</div>\n        <div class=\"col-md-6\">{{vm.pet.age}}</div>\n    </div>\n    <div class=\"col-md-12\">\n        <div class=\"col-md-6\">Is Avalable</div>\n        <div class=\"col-md-6\">\n            <input type=\"checkbox\" ng-model=\"vm.pet.isAvailable\">\n        </div>\n    </div>\n</div>",
+        "description": "Pet HTML"
+    },
+    "Lesson 12":{
+        "prefix": "pet7",
+        "body": "module PetApp{\n    export interface Pet{\n        name:string;\n        picture:string;\n        age:number;\n        isAvailable:boolean;\n    }\n}",
+        "description": "Pet"
+    },
+    "Lesson 13":{
+        "prefix": "pet8",
+        "body": "module PetApp {\n    /**\n     * SPDataService\n     */\n    class SPDataService implements IDataService {\n        constructor() {\n\n        }\n        /**\n         * Get All Pets\n         * @return All Pets\n         */\n        getAllPets(): Array<Pet> {\n            return [\n                {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                 {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                 {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                 {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n                 {\n                    name: 'Puppy',\n                    picture: 'images/image.jpg',\n                    age: 5,\n                    isAvailable: true\n                },\n            ];\n\n        }\n    }\n\n    angular\n    .module('petApp')\n    .service('spDataSvc', SPDataService);\n}" ,
+        "description": "SPDataService"
+    },
+    "Lesson 14":{
+        "prefix": "pet9",
+        "body": "(()=>{\n    let container = document.getElementsByTagName('body')[0];\n    angular.bootstrap(container, ['petApp']);\n})();",
+        "description": "Main"
     }
 }
