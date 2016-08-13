@@ -1,7 +1,7 @@
 class Presenter {
     topics: string[];
-    constructor(topics: string[]) {
-        this.topics = topics;
+    constructor(topicss: string[]) {
+        this.topics = topicss;
     }
     present() {  
        
