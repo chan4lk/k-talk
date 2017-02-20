@@ -4,17 +4,19 @@ using Workflow.Business;
 using FluentAssertions;
 using Microsoft.QualityTools.Testing.Fakes;
 using Microsoft.SharePoint.Fakes;
+using Moq;
 
 namespace Workflow.Tests
 {
     [TestFixture]
     public class WorkflowTests
     {
-        BusinessService service;
+        BusinessService service;        
+        Func<UserRole> roleManager;
 
         [TestFixtureSetUp]
         public void Setup()
-        {
+        {           
             service = new BusinessService();
         }
 
@@ -24,7 +26,7 @@ namespace Workflow.Tests
             using (ShimsContext.Create())
             {
                 SetupSPContext(UserRole.ProgramManager.ToString());
-                Assert.Throws<ArgumentNullException>(() => service.GetWorkflowState(null));
+                Assert.Throws<ArgumentNullException>(() => service.GetWorkflowState(Helper.GetRole, null));
             }
         }
 
@@ -39,8 +41,8 @@ namespace Workflow.Tests
         {
             using (ShimsContext.Create())
             {
-                SetupSPContext(role.ToString());
-                WorkflowStateResponse response = service.GetWorkflowState(new EnrollmentForm { WorkflowAction = action });
+                roleManager = () => role;                
+                WorkflowStateResponse response = service.GetWorkflowState(roleManager, new EnrollmentForm { WorkflowAction = action });
                 response.WorkflowState.ShouldBeEquivalentTo(state);
             }
         }

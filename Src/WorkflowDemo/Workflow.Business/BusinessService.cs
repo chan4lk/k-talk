@@ -7,9 +7,9 @@ namespace Workflow.Business
 {
     public class BusinessService
     {
-        public WorkflowStateResponse GetWorkflowState(EnrollmentForm form)
+        public WorkflowStateResponse GetWorkflowState(Func<UserRole> getRole, EnrollmentForm form)
         {
-            UserRole role = Helper.GetRole();
+            UserRole role = getRole();
 
             WorkflowState state = WorkflowState.None;
 
