@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>tddstate</Title>
+			<Shortcut>tddstate</Shortcut>
+			<Description>Code snippet for WorkflowState Class</Description>
+			<Author>Chandima Ranaweera</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>		
+			<Code Language="csharp">
+				<![CDATA[
+				namespace WorkflowDemo.Entities
+				{
+					public enum WorkflowState
+					{
+						None,
+
+						PMApproved,
+						PMReturned,
+						PMRejected,
+						SMApproved,
+						SMReturned,
+						SMRejected,
+						DistributorSubmitted
+					}
+				}
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
