@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>tddfake</Title>
+			<Shortcut>tddfake</Shortcut>
+			<Description>Code snippet for Fake setup Method</Description>
+			<Author>Chandima Ranaweera</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>		
+			<Code Language="csharp">
+				<![CDATA[
+				private void SetupContext(UserRole role)
+        {
+            ShimSPContext.CurrentGet = () =>
+            {
+                return new ShimSPContext()
+                {
+                    SiteGet = () =>
+                        {
+                            return new ShimSPSite()
+                            {
+                                UrlGet = () => "http://localhost/User/" + role.ToString()
+                            };
+                        }
+                };
+            };
+        }
+			]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

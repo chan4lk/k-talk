@@ -9,9 +9,9 @@ using System.Security;
 [assembly: AssemblyTitle("WorkflowDemo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("WorkflowDemo")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,7 +21,7 @@ using System.Security;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("511da11b-be33-47e0-9861-0c51e7e5ad20")]
+[assembly: Guid("4995a13b-ff72-4bc1-92e0-8caafbc8d6f5")]
 
 // Version information for an assembly consists of the following four values:
 //

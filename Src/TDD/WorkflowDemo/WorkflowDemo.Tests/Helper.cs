@@ -1,10 +1,7 @@
 ﻿using Microsoft.SharePoint;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using WorkflowDemo.Entities;
 
-namespace Workflow.Business
+namespace WorkflowDemo
 {
     public class Helper
     {
@@ -12,11 +9,11 @@ namespace Workflow.Business
         {
             var url = SPContext.Current.Site.Url;
 
-            if (url.Contains("ProgramManager")) 
+            if (url.Contains("ProgramManager"))
                 return UserRole.ProgramManager;
             else if (url.Contains("SalesManager"))
-                return UserRole.SalesManager ;
-            else 
+                return UserRole.SalesManager;
+            else
                 return UserRole.Distributor;
         }
     }

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Workflow.Business
+namespace WorkflowDemo.Entities
 {
     public class EnrollmentForm
     {
-        public WorkflowAction WorkflowAction { get; set; }
+        public WorkflowState State { get; set; }
+
+        public UserAction Action { get; set; }
     }
 }

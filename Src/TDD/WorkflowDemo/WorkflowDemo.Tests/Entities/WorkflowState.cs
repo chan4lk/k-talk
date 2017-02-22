@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Workflow.Business
+﻿namespace WorkflowDemo.Entities
 {
     public enum WorkflowState
     {
         None,
+
         PMApproved,
         PMReturned,
         PMRejected,
@@ -17,3 +13,4 @@ namespace Workflow.Business
         DistributorSubmitted
     }
 }
+			

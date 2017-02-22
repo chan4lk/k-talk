@@ -1,6 +1,3 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package dslVersion="1.0.0.0" Id="d0c2c1c7-6f3a-4fb9-a4d9-15bb853e7fe3" solutionId="d0c2c1c7-6f3a-4fb9-a4d9-15bb853e7fe3" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="WorkflowDemo">
-    <features>
-        <featureReference itemId="3423dcc4-d818-4bae-a99c-f9d21c17444e" />
-    </features>
+<package dslVersion="1.0.0.0" Id="354cc32b-9e96-438f-ae30-b7216b4be57d" solutionId="354cc32b-9e96-438f-ae30-b7216b4be57d" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="WorkflowDemo">
 </package>
