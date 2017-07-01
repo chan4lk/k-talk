@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "target": "es5"
+    },
+    "typeAcquisition": {
+        "enable": true,
+        "include": [
+            "jasmine"
+        ]
+    }
+}
